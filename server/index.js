@@ -26,7 +26,7 @@ const start = async () => {
         await connectDB(); // It's better to wait for the DB connection first
 
         // CORRECT
-        server.listen(PORT, () => {
+        server.listen(PORT,  "0.0.0.0" ,  () => {
             console.log(`🚀 Server is listening on ${PORT}`);
         });
 
