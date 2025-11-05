@@ -6,14 +6,12 @@ let messages = {} // users chats
 
 const connectToSocket = (server) => {
     const io = new Server(server, {
-        cors: {
-  origin: [
-    "http://localhost:5173",
-    "https://quickmeet-vbrq.onrender.com"
-  ],
-  methods: ["GET", "POST"],
-  credentials: true,
-}
+          cors: {
+            origin: "*",
+            methods: ["GET", "POST"],
+            allowedHeaders: ["*"],
+            credentials: true
+        }
     })
 
     io.on("connection", (socket) => {
